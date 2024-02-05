@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liste des Potins</title>
+</head>
+<body>
+  <h1>Liste des Potins</h1>
+
+  <% if gossips.any? %>
+    <ul>
+      <% gossips.each do |gossip| %>
+        <li>Auteur : <%= gossip.author %>, Contenu : <%= gossip.content %></li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>Aucun potin trouvé.</p>
+  <% end %>
+
+  <!-- Lien pour revenir à la page des potins -->
+  <a href="/gossips">Revenir à la page des potins</a>
+</body>
+</html>
