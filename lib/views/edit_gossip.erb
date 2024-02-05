@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Éditer le Potin</title>
+</head>
+<body>
+  <h1>Éditer le Potin</h1>
+
+  <form action="/gossips/<%= @gossip.id %>/edit" method="post">
+    <label for="updated_author">Nouvel auteur :</label>
+    <input type="text" id="updated_author" name="updated_author" value="<%= @gossip.author %>" required>
+
+    <label for="updated_content">Nouveau contenu :</label>
+    <textarea id="updated_content" name="updated_content" required><%= @gossip.content %></textarea>
+
+    <input type="submit" value="Enregistrer les modifications">
+  </form>
+
+  <a href="/gossips/<%= @gossip.id %>">Annuler</a>
+</body>
+</html>

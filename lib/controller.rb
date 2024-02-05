@@ -1,4 +1,5 @@
 require 'Gossip'
+require 'sinatra'
 
 class ApplicationController < Sinatra::Base
   get '/gossips' do
@@ -22,3 +23,7 @@ class ApplicationController < Sinatra::Base
     erb :index, locals: { gossips: Gossip.all }
   end
 end
+get '/edit_gossip' do
+  erb :edit_gossip
+end
+
